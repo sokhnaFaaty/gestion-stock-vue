@@ -1,0 +1,11 @@
+{
+    "name": "gesclasse/project",
+    "description": "Système de gestion de classe",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {}
+}
