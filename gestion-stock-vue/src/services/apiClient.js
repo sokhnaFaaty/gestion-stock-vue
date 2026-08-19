@@ -11,11 +11,20 @@ function viderSessionLocale() {
   localStorage.removeItem(USER_KEY);
 }
  
+// function preparerBody(body) {
+  // if (body == null) {
+    // return undefined;
+  // }
+ 
+  // return JSON.stringify(body);
+// }
 function preparerBody(body) {
   if (body == null) {
     return undefined;
   }
- 
+  if (body instanceof FormData) {
+    return body;
+  }
   return JSON.stringify(body);
 }
  
@@ -85,5 +94,6 @@ export const apiClient = {
   get: (chemin) => requete(chemin, { method: 'GET' }),
   post: (chemin, body) => requete(chemin, { method: 'POST', body }),
   put: (chemin, body) => requete(chemin, { method: 'PUT', body }),
+  patch: (chemin, body) => requete(chemin, { method: 'PATCH', body }),
   delete: (chemin) => requete(chemin, { method: 'DELETE' }),
 };

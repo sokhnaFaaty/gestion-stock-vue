@@ -23,6 +23,18 @@ const route = useRoute();
         <i class="fa-solid fa-tags w-4 text-center"></i>
         Catégories
       </RouterLink>
+      <RouterLink
+  to="/produits"
+  class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors"
+  :class="
+    route.path.startsWith('/produits')
+      ? 'bg-indigo-600 text-white'
+      : 'text-slate-300 hover:bg-slate-800 hover:text-white'
+  "
+>
+  <i class="fa-solid fa-box w-4 text-center"></i>
+  Produits
+</RouterLink>
     </nav>
   </aside>
 </template>
