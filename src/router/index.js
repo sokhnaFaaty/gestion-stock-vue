@@ -3,6 +3,7 @@ import { useAuthStore } from '@/stores/auth.js';
 import LoginView from '@/views/LoginView.vue';
 import RegisterView from '@/views/RegisterView.vue';
 import CategoriesView from '@/views/CategoriesView.vue';
+import CommandesView from '@/views/CommandesView.vue';
  
 const routes = [
   {
@@ -25,6 +26,12 @@ const routes = [
     component: CategoriesView,
     meta: { requiresAuth: true },
   },
+  {
+  path: '/commandes',
+  name: 'commandes',
+  component: CommandesView,
+  meta: { requiresAuth: true },
+},
 ];
  
 const router = createRouter({

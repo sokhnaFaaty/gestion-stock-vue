@@ -6,6 +6,8 @@ const props = defineProps({
   colonnes: { type: Array, required: true },
   lignes: { type: Array, required: true },
   parPage: { type: Number, default: 5 },
+  modifierIcone: { type: String, default: 'fa-solid fa-pen' },
+  modifierTitre: { type: String, default: 'Modifier' },
 });
  
 defineEmits(['modifier', 'supprimer']);
@@ -83,6 +85,14 @@ function pageSuivante() {
               >
                 <i class="fa-solid fa-pen"></i>
               </button>
+              <button
+  type="button"
+  @click="$emit('modifier', ligne)"
+  class="mr-3 text-indigo-600 hover:text-indigo-800"
+  :title="modifierTitre"
+>
+  <i :class="modifierIcone"></i>
+</button>
  
               <button
                 type="button"
