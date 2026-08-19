@@ -3,17 +3,11 @@ import { useAuthStore } from '@/stores/auth.js';
 import LoginView from '@/views/LoginView.vue';
 import RegisterView from '@/views/RegisterView.vue';
 import CategoriesView from '@/views/CategoriesView.vue';
+import ProduitsView from '@/views/ProduitsView.vue';  
 import CommandesView from '@/views/CommandesView.vue';
- // En haut de src/index.js, avec les autres imports
-import { cors } from 'hono/cors';
 
-// Juste après la création de `app`, avant les routes
-app.use('*', cors({
-  origin: 'http://localhost:5173', // l'URL de ton serveur Vite
-  allowMethods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
-  allowHeaders: ['Content-Type', 'Authorization'],
-}));
 
+ 
 const routes = [
   {
     path: '/login',
